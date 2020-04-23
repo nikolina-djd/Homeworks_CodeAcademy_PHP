@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    
+    
+    </div>  
+
+    <script>
+        var container = document.querySelector(".container");
+        var heading = document.createElement("h2")
+        console.log(heading);
+        heading.textContent = ("My shoping list");
+        container.appendChild(heading);
+ 
+        var label = document.createElement('label');
+        console.log(label);
+        label.textContent = ("Enter a new item: ");
+        container.appendChild(label);
+        
+        var inputElement = document.createElement('input');
+        console.log(inputElement);
+        inputElement.setAttribute = ('type', 'text');
+        container.appendChild(inputElement);
+        
+        var buttonElement = document.createElement('button');
+        console.log(buttonElement);
+        buttonElement.setAttribute('type', 'button');
+        buttonElement.textContent = ('Add item');
+        container.appendChild(buttonElement);
+
+        buttonElement.addEventListener("click", createListElement);
+        
+        var ul = document.createElement("ul");
+        container.appendChild(ul);
+
+        function createListElement () {
+            
+            var li = document.createElement('li');
+            var span = document.createElement("span");
+            span.textContent = inputElement.value + "  ";
+            ul.appendChild(li);
+            li.appendChild(span);
+            var buttonDelete = document.createElement("button");
+            buttonDelete.textContent = ("Delete");
+            buttonDelete.setAttribute('type', 'button');
+            li.appendChild(buttonDelete);
+        }
+         
+         buttonDelete.addEventListener("Onclick", deleteItem);
+        function deleteItem() {
+            ul.removeChild(li);
+        }
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+        
+        
+                                                        
+    </script>   
+</body>
+</html>
