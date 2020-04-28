@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Lorem Generator</title>
+</head>
+<body>
+
+ <div class="container mt-3">
+  <h2>Lorem Generator</h2>
+    <p>Select number of lorem ipsum words you want (up to 50)</p>
+    <select id="numberOdWords" class="form-control m-2  text-dark w-25">
+      <option value='5' selected >5</option>
+      <option value='10'>10</option>
+      <option value='15'>15</option>
+      <option value='20'>20</option>
+      <option value='25'>25</option>
+      <option value='30'>30</option>
+      <option value='35'>35</option>
+      <option value='40'>40</option>
+      <option value='45'>45</option>
+      <option value='50'>50</option>
+    </select>
+    <p id="loremIpsumString"></p>
+</div>
+<script>
+    var fullLoremIpsumString = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non asperiores debitis nobis voluptatum quia omnis, rerum quam sequi tempora possimus officiis, fugit dolorem itaque porro inventore minus harum magni optio voluptas nostrum! Doloremque vero sed dolor obcaecati harum accusantium quam nulla, id laudantium, ducimus saepe doloribus sint, ullam iste excepturi!";
+    fullLoremIpsumString = fullLoremIpsumString.split(' ');
+    
+    writeString(); 
+    
+    document.getElementById('numberOdWords').addEventListener("change", writeString);
+    
+    function writeString() {
+        var numberOdWords = document.getElementById('numberOdWords').value;
+        var result = fullLoremIpsumString.slice(0,numberOdWords);
+        result = result.join(" ");
+        document.getElementById("loremIpsumString").textContent = result;
+    }
+</script>
+</body>
+</html>
+
+    
+</body>
+</html>

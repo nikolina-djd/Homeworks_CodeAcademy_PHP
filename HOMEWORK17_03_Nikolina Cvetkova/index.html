@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Lorem Generator</title>
+</head>
+<body>
+
+ <div>
+</div>
+<script>
+   var camelCase = "the simplestThings in LIFE are alwaysThe best";
+   console.log(camelCase);
+   var titleCase = convertToTitleCase(camelCase);
+   console.log(titleCase);
+
+    function convertToTitleCase(camelCase) {       
+        if (!camelCase) {
+        return '';
+        }
+        else {
+            var titleCase = camelCase.replace(/([a-z])([A-Z])/g, '$1 $2'); //adds empty space before every uppercase letter
+            titleCase = titleCase.toLowerCase().trim(); //converts whole text in lowercase letters
+            titleCase = titleCase.split(' '); //turns string into an array
+
+            for(var i=0; i <titleCase.length; i++) {
+                titleCase[i] = titleCase[i].charAt(0).toUpperCase() + titleCase[i].slice(1); //it capitilizes each element of the array (every word)
+            }
+            
+            titleCase = titleCase.join(' '); // converts the array into string again
+            return titleCase;
+        }
+    }
+</script>
+</body>
+</html>
+
+    
+</body>
+</html>
